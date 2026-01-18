@@ -1,0 +1,121 @@
+/* General resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(90deg, #1a1a1a, #111);
+}
+
+.hero .logo {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #00ffff;
+}
+
+.mission-statement {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #0ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.social-links a:hover {
+  color: #ff0;
+}
+
+/* Roster Section */
+.roster-section {
+  padding: 40px 20px;
+}
+
+.roster-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0ff;
+  text-align: center;
+}
+
+.roster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.player-card {
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 150px;
+}
+
+.player-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.player-card h3 {
+  font-size: 1.1rem;
+  color: #0ff;
+  margin-bottom: 5px;
+}
+
+.player-card p {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #888;
+  background-color: #111;
+}
+
+/* YouTube Section */
+.youtube-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.youtube-section h2 {
+  color: #0ff;
+  margin-bottom: 20px;
+}
+
+#youtube-videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
