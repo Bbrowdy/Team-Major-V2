@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>MJR Krankykoalq! | Team Major</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body { margin:0; font-family:Arial,sans-serif; background:#0b0b0b; color:white; text-align:center; }
-    .container { max-width:700px; margin:40px auto; padding:20px; }
-    img { width:220px; border-radius:12px; }
-    h1 { margin-top:20px; }
-    p { opacity:0.85; line-height:1.6; }
-    .socials a { display:inline-block; margin:10px; padding:10px 18px; background:#1f1f1f; color:white; text-decoration:none; border-radius:6px; }
-    .socials a:hover { background:#444; }
-    .back { display:inline-block; margin-top:30px; color:#aaa; text-decoration:none; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MJR Krankykoalq | Team Major</title>
+<style>
+/* same styles as Kobey page */
+body { font-family: Arial,sans-serif; background:#0d0d0d; color:#fff; margin:0; padding:20px; }
+a { color:#1E90FF; text-decoration:none; transition: all 0.3s ease; }
+a:hover { text-decoration:underline; }
+h1 { text-align:center; margin-bottom:10px; }
+.role-badge { display:inline-block; background:#1E90FF; color:#fff; font-size:0.8rem; padding:2px 6px; border-radius:4px; margin-left:5px; }
+.player-note { text-align:center; font-size:0.9rem; color:#aaa; margin-top:5px; }
+.player-video { display:block; margin:20px auto; width:200px; height:200px; object-fit:cover; border-radius:10px; border:2px solid #fff; cursor:pointer; transition: transform 0.3s; }
+.player-video:hover { transform: scale(1.05); }
+section { opacity:0; transform:translateY(20px); transition:opacity 0.6s, transform 0.6s; max-width:600px; margin:0 auto; text-align:center; }
+section.visible { opacity:1; transform:translateY(0); }
+p { line-height:1.5; }
+.socials a { margin:0 10px; font-weight:bold; display:inline-block; transition: transform 0.3s; }
+.socials a:hover { transform:scale(1.1); color:#00CED1; }
+</style>
 </head>
 <body>
-  <div class="container">
-    <img src="placeholder5.png" alt="MJR Krankykoalq!">
-    <h1>MJR Krankykoalq!</h1>
-    <p>PLAYER_DESCRIPTION</p>
-    <div class="socials">
-      <a href="#" target="_blank">Twitter</a>
-      <a href="#" target="_blank">Twitch</a>
-      <a href="#" target="_blank">YouTube</a>
-    </div>
-    <a class="back" href="index.html">← Back to Roster</a>
-  </div>
+
+<section>
+<h1>MJR Krankykoalq <span class="role-badge">Comp</span></h1>
+<video autoplay muted loop class="player-video" poster="placeholder5.png">
+  <source src="placeholder5.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p class="player-note">Appears in Competitive roster</p>
+<p>Bio: Lorem ipsum placeholder text for MJR Krankykoalq.</p>
+<div class="socials">
+  <a href="#">Twitter</a>
+  <a href="#">Instagram</a>
+</div>
+</section>
+
+<script>
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{ if(entry.isIntersecting) entry.target.classList.add('visible'); });
+}, {threshold:0.1});
+sections.forEach(section=>observer.observe(section));
+</script>
+
 </body>
 </html>
