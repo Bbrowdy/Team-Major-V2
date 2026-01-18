@@ -14,11 +14,19 @@
   .roster { margin:40px auto; max-width:1000px; text-align:center; }
   .roster h2 { margin-bottom:20px; text-transform:uppercase; letter-spacing:1px; font-size:1.5rem; }
   .players-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:20px; justify-items:center; }
-  .player img { width:120px; height:120px; object-fit:cover; border-radius:10px; border:2px solid #fff; cursor:pointer; transition: transform 0.2s; }
-  .player img:hover { transform: scale(1.05); }
+  .player { transition: transform 0.3s; }
+  .player img, .player video { width:120px; height:120px; object-fit:cover; border-radius:10px; border:2px solid #fff; cursor:pointer; }
+  .player img:hover, .player video:hover { transform: scale(1.05); }
   .player p { margin-top:10px; font-weight:bold; }
+  .role-badge { display:inline-block; background-color:#1E90FF; color:#fff; font-size:0.7rem; padding:2px 5px; margin-left:5px; border-radius:4px; }
+  .player-note { font-size:0.8rem; color:#aaa; margin-top:3px; }
   .youtube-section { max-width:800px; margin:40px auto; text-align:center; }
   iframe { width:100%; height:450px; border:none; border-radius:10px; }
+
+  /* Fade-in for roster sections */
+  .roster { opacity:0; transform:translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .roster.visible { opacity:1; transform:translateY(0); }
+
   footer { text-align:center; margin:50px 0 20px 0; font-size:.9rem; color:#aaa; }
 </style>
 </head>
@@ -48,33 +56,45 @@
   <div class="players-grid">
     <div class="player">
       <a href="MJR_Kobey.html">
-        <img src="placeholder4.png" alt="MJR Kobey!">
+        <video autoplay muted loop poster="placeholder4.png">
+          <source src="placeholder4.mp4" type="video/mp4">
+        </video>
       </a>
-      <p>MJR Kobey!</p>
+      <p>MJR Kobey! <span class="role-badge">Comp</span></p>
     </div>
     <div class="player">
       <a href="MJR_Krankykoalq.html">
-        <img src="placeholder5.png" alt="MJR Krankykoalq!">
+        <video autoplay muted loop poster="placeholder5.png">
+          <source src="placeholder5.mp4" type="video/mp4">
+        </video>
       </a>
-      <p>MJR Krankykoalq!</p>
+      <p>MJR Krankykoalq! <span class="role-badge">Comp</span></p>
     </div>
     <div class="player">
       <a href="MJR_Flukes.html">
-        <img src="placeholder6.png" alt="MJR Flukes">
+        <video autoplay muted loop poster="placeholder6.png">
+          <source src="placeholder6.mp4" type="video/mp4">
+        </video>
       </a>
-      <p>MJR Flukes</p>
+      <p>MJR Flukes <span class="role-badge">Comp + Content</span></p>
+      <p class="player-note">Also appears as content creator</p>
     </div>
     <div class="player">
       <a href="MJR_Yenewtt.html">
-        <img src="placeholder7.png" alt="MJR Yenewtt">
+        <video autoplay muted loop poster="placeholder7.png">
+          <source src="placeholder7.mp4" type="video/mp4">
+        </video>
       </a>
-      <p>MJR Yenewtt</p>
+      <p>MJR Yenewtt <span class="role-badge">Comp</span></p>
     </div>    
     <div class="player">
       <a href="MJR_Lachy.html">
-        <img src="placeholder8.png" alt="MJR Lachy">
+        <video autoplay muted loop poster="placeholder8.png">
+          <source src="placeholder8.mp4" type="video/mp4">
+        </video>
       </a>
-      <p>MJR Lachy</p>
+      <p>MJR Lachy <span class="role-badge">Comp + Content</span></p>
+      <p class="player-note">Also appears as content creator</p>
     </div>    
   </div>
 </div>
@@ -85,21 +105,27 @@
   <div class="players-grid">
     <div class="player">
       <a href="MJR_Sanity.html">
-        <img src="placeholder1.png" alt="MJR Sanity">
+        <video autoplay muted loop poster="placeholder1.png">
+          <source src="placeholder1.mp4" type="video/mp4">
+        </video>
       </a>
-      <p>MJR Sanity</p>
+      <p>MJR Sanity <span class="role-badge">Academy</span></p>
     </div>
     <div class="player">
       <a href="MJR_Dayno.html">
-        <img src="placeholder2.png" alt="MJR Dayno">
+        <video autoplay muted loop poster="placeholder2.png">
+          <source src="placeholder2.mp4" type="video/mp4">
+        </video>
       </a>
-      <p>MJR Dayno</p>
+      <p>MJR Dayno <span class="role-badge">Academy</span></p>
     </div>
     <div class="player">
       <a href="MJR_Monsterrzz.html">
-        <img src="placeholder3.png" alt="MJR Monsterrzz">
+        <video autoplay muted loop poster="placeholder3.png">
+          <source src="placeholder3.mp4" type="video/mp4">
+        </video>
       </a>
-      <p>MJR Monsterrzz</p>
+      <p>MJR Monsterrzz <span class="role-badge">Academy</span></p>
     </div>
   </div>
 </div>
@@ -110,27 +136,37 @@
   <div class="players-grid">
     <div class="player">
       <a href="MJR_Robbie.html">
-        <img src="placeholder9.png" alt="MJR Robbie!">
+        <video autoplay muted loop poster="placeholder9.png">
+          <source src="placeholder9.mp4" type="video/mp4">
+        </video>
       </a>
-      <p>MJR Robbie!</p>
+      <p>MJR Robbie! <span class="role-badge">Content</span></p>
     </div>
     <div class="player">
       <a href="MJR_Lachy.html">
-        <img src="placeholder8.png" alt="MJR Lachy">
+        <video autoplay muted loop poster="placeholder8.png">
+          <source src="placeholder8.mp4" type="video/mp4">
+        </video>
       </a>
-      <p>MJR Lachy</p>
+      <p>MJR Lachy <span class="role-badge">Comp + Content</span></p>
+      <p class="player-note">Also appears in competitive roster</p>
     </div>
     <div class="player">
       <a href="MJR_Flukes.html">
-        <img src="placeholder6.png" alt="MJR Flukes">
+        <video autoplay muted loop poster="placeholder6.png">
+          <source src="placeholder6.mp4" type="video/mp4">
+        </video>
       </a>
-      <p>MJR Flukes</p>
+      <p>MJR Flukes <span class="role-badge">Comp + Content</span></p>
+      <p class="player-note">Also appears in competitive roster</p>
     </div>
     <div class="player">
       <a href="MJR_Patericko.html">
-        <img src="placeholder10.png" alt="MJR Patericko">
+        <video autoplay muted loop poster="placeholder10.png">
+          <source src="placeholder10.mp4" type="video/mp4">
+        </video>
       </a>
-      <p>MJR Patericko</p>
+      <p>MJR Patericko <span class="role-badge">Content</span></p>
     </div>
   </div>
 </div>
@@ -145,5 +181,19 @@
   <p>Founder: Mr.B | Co-founder: Kobeycuhh</p>
 </footer>
 
+<script>
+  // Fade-in effect for roster sections
+  const rosters = document.querySelectorAll('.roster');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {threshold: 0.1});
+  rosters.forEach(roster => observer.observe(roster));
+</script>
+
 </body>
 </html>
+
