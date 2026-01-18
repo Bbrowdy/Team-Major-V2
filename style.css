@@ -3,7 +3,7 @@
 ======================== */
 body {
   font-family: Arial, sans-serif;
-  background: #0d0d0d;
+  background: #050505; /* darker black */
   color: #fff;
   margin: 0;
   padding: 0;
@@ -81,11 +81,13 @@ a {
   border-radius: 10px;
   border: 2px solid #fff;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.3s;
 }
 
+/* subtle glow on hover */
 .player img:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 15px #1e90ff88;
 }
 
 .player p {
@@ -98,7 +100,7 @@ a {
 ======================== */
 .player-page {
   max-width: 800px;
-  margin: 100px auto 50px auto; /* adds space on top */
+  margin: 100px auto 50px auto; 
   text-align: center;
   padding: 20px;
 }
@@ -109,6 +111,12 @@ a {
   border-radius: 10px;
   border: 2px solid #fff;
   margin-bottom: 20px;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.player-page .player-image img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px #1e90ff88;
 }
 
 .player-page .player-bio {
@@ -203,17 +211,4 @@ footer {
 @keyframes fadeInAnimation {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
-}
-/* ========================
-   Fade-in on Scroll (JS)
-======================== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
