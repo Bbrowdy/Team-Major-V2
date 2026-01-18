@@ -1,6 +1,6 @@
-/* ================================
+/* ========================
    Global Styles
-================================ */
+======================== */
 body {
   font-family: Arial, sans-serif;
   background: #0d0d0d;
@@ -14,27 +14,27 @@ a {
   color: inherit;
 }
 
-/* ================================
+/* ========================
    Logo
-================================ */
+======================== */
 .logo img {
   width: 250px;
   display: block;
   margin: 20px auto;
 }
 
-/* ================================
+/* ========================
    Mission Statement
-================================ */
+======================== */
 .mission {
   text-align: center;
   font-size: 1.2rem;
   margin-bottom: 30px;
 }
 
-/* ================================
+/* ========================
    Social Links
-================================ */
+======================== */
 .socials {
   text-align: center;
   margin-bottom: 40px;
@@ -43,12 +43,13 @@ a {
 .socials a {
   margin: 0 10px;
   color: #fff;
+  text-decoration: none;
   font-weight: bold;
 }
 
-/* ================================
-   Rosters
-================================ */
+/* ========================
+   Roster Grids
+======================== */
 .roster {
   margin: 40px auto;
   max-width: 1000px;
@@ -88,33 +89,78 @@ a {
   font-weight: bold;
 }
 
-/* Duplicate Role Note (for players with multiple roles) */
-.duplicate-note {
-  font-size: 0.8rem;
-  color: #ccc;
-  display: block;
-  margin-top: 2px;
+/* ========================
+   Player Pages
+======================== */
+.player-page {
+  max-width: 800px;
+  margin: 100px auto 50px auto; /* adds space on top */
+  text-align: center;
+  padding: 20px;
 }
 
-/* ================================
+.player-page .player-image img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  margin-bottom: 20px;
+}
+
+.player-page .player-bio {
+  font-size: 1rem;
+  margin: 20px 0;
+}
+
+.duplicate-note {
+  display: block;
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+/* ========================
+   Go Back Link
+======================== */
+.back-link {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-family: "Verdana", "Arial Rounded MT Bold", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.back-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* ========================
    YouTube Section
-================================ */
+======================== */
 .youtube-section {
   max-width: 800px;
   margin: 40px auto;
   text-align: center;
 }
 
-.youtube-section iframe {
+iframe {
   width: 100%;
   height: 450px;
   border: none;
   border-radius: 10px;
 }
 
-/* ================================
+/* ========================
    Footer
-================================ */
+======================== */
 footer {
   text-align: center;
   margin: 50px 0 20px 0;
@@ -122,17 +168,16 @@ footer {
   color: #aaa;
 }
 
-/* ================================
-   Fade-in Animation (used by script.js)
-================================ */
+/* ========================
+   Fade In Animation
+======================== */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  animation: fadeInAnimation 0.8s forwards;
+  animation-delay: 0.2s;
 }
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes fadeInAnimation {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-
