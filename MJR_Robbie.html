@@ -4,46 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MJR Robbie | Team Major</title>
-<style>
-/* same styles */
-body { font-family: Arial,sans-serif; background:#0d0d0d; color:#fff; margin:0; padding:20px; }
-a { color:#1E90FF; text-decoration:none; transition: all 0.3s ease; }
-a:hover { text-decoration:underline; }
-h1 { text-align:center; margin-bottom:10px; }
-.role-badge { display:inline-block; background:#1E90FF; color:#fff; font-size:0.8rem; padding:2px 6px; border-radius:4px; margin-left:5px; }
-.player-note { text-align:center; font-size:0.9rem; color:#aaa; margin-top:5px; }
-.player-video { display:block; margin:20px auto; width:200px; height:200px; object-fit:cover; border-radius:10px; border:2px solid #fff; cursor:pointer; transition: transform 0.3s; }
-player-video:hover { transform: scale(1.05); }
-section { opacity:0; transform:translateY(20px); transition:opacity 0.6s, transform 0.6s; max-width:600px; margin:0 auto; text-align:center; }
-section.visible { opacity:1; transform:translateY(0); }
-p { line-height:1.5; }
-.socials a { margin:0 10px; font-weight:bold; display:inline-block; transition: transform 0.3s; }
-.socials a:hover { transform:scale(1.1); color:#00CED1; }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<section>
-<h1>MJR Robbie <span class="role-badge">Content</span></h1>
-<video autoplay muted loop class="player-video" poster="placeholder9.png">
-  <source src="placeholder9.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-<p class="player-note">Appears in Content Creator roster</p>
-<p>Bio: Lorem ipsum placeholder text for MJR Robbie.</p>
-<div class="socials">
-  <a href="#">Twitter</a>
-  <a href="#">Instagram</a>
+<div class="roster fade-in">
+  <h2>MJR Robbie!</h2>
+  <div class="players-grid">
+    <div class="player">
+      <img src="placeholder9.png" alt="MJR Robbie!" class="player-media">
+      <p>MJR Robbie!</p>
+    </div>
+  </div>
 </div>
-</section>
 
-<script>
-const sections = document.querySelectorAll('section');
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{ if(entry.isIntersecting) entry.target.classList.add('visible'); });
-}, {threshold:0.1});
-sections.forEach(section=>observer.observe(section));
-</script>
+<div class="socials fade-in">
+  <a href="https://x.com/RobbieHandle" target="_blank">X</a>
+  <a href="https://www.tiktok.com/@RobbieHandle" target="_blank">TikTok</a>
+  <a href="https://www.youtube.com/@RobbieHandle" target="_blank">YouTube</a>
+</div>
 
+<div class="youtube-section fade-in">
+  <h2>Latest YouTube Video</h2>
+  <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=UCrzb75rvct1bcwIA4v2qxHQ" allowfullscreen></iframe>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
+
