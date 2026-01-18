@@ -6,27 +6,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Team Major - Fortnite OCE</title>
 <style>
+  /* ===== Base Styles ===== */
   body { font-family: Arial,sans-serif; background:#0d0d0d; color:#fff; margin:0; padding:0; }
-  .logo img { width:250px; display:block; margin:20px auto; }
-  .mission { text-align:center; font-size:1.2rem; margin-bottom:30px; }
+  a { color:#1E90FF; text-decoration:none; transition: all 0.3s ease; }
+  a:hover { text-decoration:underline; }
+
+  /* ===== Logo ===== */
+  .logo img { width:250px; display:block; margin:20px auto; transition: transform 0.3s ease, filter 0.3s ease; }
+  .logo img:hover { transform: scale(1.05); filter:drop-shadow(0 0 10px #1E90FF); }
+
+  /* ===== Mission Statement ===== */
+  .mission { text-align:center; font-size:1.2rem; margin-bottom:30px; position:relative; }
+  .mission::before { content:'★'; position:absolute; left:50%; transform:translateX(-50%); top:-20px; font-size:1.5rem; color:#1E90FF; }
+  .mission p { background: linear-gradient(90deg,#1E90FF,#00CED1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+
+  /* ===== Social Links ===== */
   .socials { text-align:center; margin-bottom:40px; }
-  .socials a { margin:0 10px; color:#fff; text-decoration:none; font-weight:bold; }
-  .roster { margin:40px auto; max-width:1000px; text-align:center; }
-  .roster h2 { margin-bottom:20px; text-transform:uppercase; letter-spacing:1px; font-size:1.5rem; }
+  .socials a { margin:0 10px; font-weight:bold; display:inline-block; transition: transform 0.3s, color 0.3s; }
+  .socials a:hover { transform: scale(1.1); color:#00CED1; }
+
+  /* ===== Rosters ===== */
+  .roster { margin:40px auto; max-width:1000px; text-align:center; opacity:0; transform:translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .roster.visible { opacity:1; transform:translateY(0); }
+  .roster h2 { margin-bottom:20px; text-transform:uppercase; letter-spacing:1px; font-size:1.5rem; border-bottom:1px solid #1E90FF; display:inline-block; padding-bottom:5px; }
   .players-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:20px; justify-items:center; }
-  .player { transition: transform 0.3s; }
-  .player img, .player video { width:120px; height:120px; object-fit:cover; border-radius:10px; border:2px solid #fff; cursor:pointer; }
+
+  /* ===== Player Cards ===== */
+  .player { transition: transform 0.3s, box-shadow 0.3s; }
+  .player:hover { transform: translateY(-3px); box-shadow:0 4px 15px rgba(0,206,209,0.4); }
+  .player img, .player video { width:120px; height:120px; object-fit:cover; border-radius:10px; border:2px solid #fff; cursor:pointer; transition: transform 0.3s; }
   .player img:hover, .player video:hover { transform: scale(1.05); }
   .player p { margin-top:10px; font-weight:bold; }
   .role-badge { display:inline-block; background-color:#1E90FF; color:#fff; font-size:0.7rem; padding:2px 5px; margin-left:5px; border-radius:4px; }
   .player-note { font-size:0.8rem; color:#aaa; margin-top:3px; }
-  .youtube-section { max-width:800px; margin:40px auto; text-align:center; }
+
+  /* ===== YouTube Section ===== */
+  .youtube-section { max-width:800px; margin:40px auto; text-align:center; transition: transform 0.3s, box-shadow 0.3s; }
+  .youtube-section:hover { transform: scale(1.02); box-shadow:0 6px 20px rgba(30,144,255,0.3); }
   iframe { width:100%; height:450px; border:none; border-radius:10px; }
 
-  /* Fade-in for roster sections */
-  .roster { opacity:0; transform:translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .roster.visible { opacity:1; transform:translateY(0); }
-
+  /* ===== Footer ===== */
   footer { text-align:center; margin:50px 0 20px 0; font-size:.9rem; color:#aaa; }
 </style>
 </head>
@@ -50,7 +69,7 @@
   <a href="https://www.youtube.com/@TeamMAJORB" target="_blank">YouTube</a>
 </div>
 
-<!-- Competitive Roster -->
+<!-- ===== Competitive Roster ===== -->
 <div class="roster competitive">
   <h2>Competitive</h2>
   <div class="players-grid">
@@ -86,7 +105,7 @@
         </video>
       </a>
       <p>MJR Yenewtt <span class="role-badge">Comp</span></p>
-    </div>    
+    </div>
     <div class="player">
       <a href="MJR_Lachy.html">
         <video autoplay muted loop poster="placeholder8.png">
@@ -95,11 +114,11 @@
       </a>
       <p>MJR Lachy <span class="role-badge">Comp + Content</span></p>
       <p class="player-note">Also appears as content creator</p>
-    </div>    
+    </div>
   </div>
 </div>
 
-<!-- Academy Roster -->
+<!-- ===== Academy Roster ===== -->
 <div class="roster academy">
   <h2>Academy</h2>
   <div class="players-grid">
@@ -130,7 +149,7 @@
   </div>
 </div>
 
-<!-- Content Creator Roster -->
+<!-- ===== Content Creator Roster ===== -->
 <div class="roster content-creator">
   <h2>Content Creator</h2>
   <div class="players-grid">
@@ -171,7 +190,7 @@
   </div>
 </div>
 
-<!-- YouTube Section -->
+<!-- ===== YouTube Section ===== -->
 <div class="youtube-section">
   <h2>Latest YouTube Video</h2>
   <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=UCrzb75rvct1bcwIA4v2qxHQ" allowfullscreen></iframe>
@@ -186,9 +205,7 @@
   const rosters = document.querySelectorAll('.roster');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if(entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, {threshold: 0.1});
   rosters.forEach(roster => observer.observe(roster));
@@ -196,4 +213,5 @@
 
 </body>
 </html>
+
 
